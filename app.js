@@ -7,7 +7,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 //api版本 v1
-var apiVersion_1 = require('./api/vi/api');
+var apiVersion_1 = require('./api/v1/api');
 
 var app = express();
 
