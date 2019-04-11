@@ -8,12 +8,12 @@ const courses = [
 ];
 
 /* GET home page. */
-router.get('/user/:id', function (req, res, next) {
+router.post('/', function (req, res, next) {
     //res.send(req.query)
-    let course = courses.find(
-        courses => courses.id == parseInt(req.params.id)
-    );
-    res.send(course);
+    // let course = courses.find(
+    //     courses => courses.id == parseInt(req.params.id)
+    // );
+    res.send('成功');
 });
 
 module.exports = router;
