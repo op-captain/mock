@@ -16,6 +16,7 @@ module.exports = {
 			// 建立连接，向表中插入值
 			// 'INSERT INTO user(id, name, age) VALUES(0,?,?)',
 			connection.query(sql.insert, [param.name, param.age], function(err, result) {
+                console.log(result)
 				if(result) {
 					result = {
 						code: 200,
