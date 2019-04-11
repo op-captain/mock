@@ -12,10 +12,16 @@ module.exports = {
 	add: function (param, res, next,callbackResponse) {
         console.log(param)
 		pool.getConnection(function(err, connection) {
+
+            var crypto = require('crypto');
+            var current_date = (new Date()).valueOf().toString();
+            var random = Math.random().toString();
+            var hash = crypto.createHash('sha1').update(current_date + random).digest('hex');
+            console.log(hash)
  
 			// 建立连接，向表中插入值
 			// 'INSERT INTO user(id, name, age) VALUES(0,?,?)',
-			connection.query(sql.insert, [param.name, param.age], function(err, result) {
+			connection.query(sql.insert, [hash, param.name, param.sex, param.age,], function(err, result) {
                 console.log(result)
 				if(result) {
 					result = {
