@@ -3,6 +3,7 @@ var mysql = require('mysql');
 var dbconf = require('../conf/db');
 var _ = require('lodash');
 var sql = require('../sql/user');
+var utils = require('../public/javascripts/utils')
 
 // 使用连接池，提升性能
 var pool  = mysql.createPool(_.extend({}, dbconf.mysql));
@@ -12,11 +13,7 @@ module.exports = {
 	add: function (param, res, next,callbackResponse) {
         console.log(param)
 		pool.getConnection(function(err, connection) {
-
-            var crypto = require('crypto');
-            var current_date = (new Date()).valueOf().toString();
-            var random = Math.random().toString();
-            var hash = crypto.createHash('sha1').update(current_date + random).digest('hex');
+			var hash = utils.hash()
             console.log(hash)
  
 			// 建立连接，向表中插入值
