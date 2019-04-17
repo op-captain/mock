@@ -5,7 +5,7 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   //res.render('index', { title: 'Express' });
   
-  res.sendFile('../web/front/index.html')
+  res.render('index',{title:'mock'})
 });
 
 module.exports = router;
