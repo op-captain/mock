@@ -3,7 +3,7 @@ var router = express.Router();
 
 var curdUser = require('../../crud/user');
 
-/* GET home page. */
+/* */
 router.post('/', function (req, res, next) {
 
 
