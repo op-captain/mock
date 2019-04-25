@@ -14,11 +14,11 @@ module.exports = {
 
 		pool.getConnection(function(err, connection) {
 			var hash = utils.hash()
-
+console.log("pool"+JSON.stringify(param))
  
 			// 建立连接，向表中插入值
 			connection.query(sql.insert, [hash, param.name, param.sex, param.age, param.avator], function(err, result) {
-
+				console.log("connection"+JSON.stringify(param))
 				if(result) {
 					result = {
 						code: 200,

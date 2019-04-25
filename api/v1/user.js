@@ -5,7 +5,7 @@ var curdUser = require('../../crud/user');
 
 /* */
 router.post('/', function (req, res, next) {
-
+    console.log(req.body)
 
     // 获取前台页面传过来的参数
     var param = req.body;
