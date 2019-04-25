@@ -17,7 +17,7 @@ module.exports = {
 
  
 			// 建立连接，向表中插入值
-			connection.query(sql.insert, [hash, param.name, param.sex, param.age, "http://tx.haiqq.com/uploads/allimg/170506/0G9454641-7.jpg"], function(err, result) {
+			connection.query(sql.insert, [hash, param.name, param.sex, param.age, param.avator], function(err, result) {
 
 				if(result) {
 					result = {
